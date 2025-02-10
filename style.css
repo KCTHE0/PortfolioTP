@@ -1,41 +1,66 @@
-/* COULEURS PRINCIPALES */
-:root {
-  --dark-bg: #0E1A26;       /* Bleu nuit / sombre */
-  --gold-color: #C7B377;    /* Doré discret */
-  --accent-color: #00C0C8;  /* Bleu-vert LoL */
-  --text-color: #ffffff;    /* Texte clair */
-  --secondary-text: #cccccc;
-  --btn-bg: #123447;
-  --btn-hover-bg: #165772;
+/* ========== THEME PRO (par défaut) ========== */
+.pro-theme {
+  --bg-color: #f5f5f5;
+  --text-color: #333;
+  --secondary-text-color: #555;
+  --primary-color: #004080; /* Un bleu pro */
+  --highlight-color: #007acc; 
+  --card-bg: #fff;
+  --card-hover: #eef;
+  --btn-bg: #007acc;
+  --btn-hover-bg: #005da3;
+  --navbar-bg: #fff;
+  --footer-bg: #ddd;
 }
 
-/* RESET SIMPLE */
+/* ========== THEME LOL (sombre/doré/bleu-vert) ========== */
+.lol-theme {
+  --bg-color: #0E1A26;       
+  --text-color: #ffffff;     
+  --secondary-text-color: #cccccc; 
+  --primary-color: #C7B377;  /* Doré discret */
+  --highlight-color: #00C0C8;  
+  --card-bg: #10202f;
+  --card-hover: #1b2a3a;
+  --btn-bg: #123447;
+  --btn-hover-bg: #165772;
+  --navbar-bg: #08131c;
+  --footer-bg: #08131c;
+}
+
+/* ========== RESET & BASE ========== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* BODY */
-body {
-  background-color: var(--dark-bg);
+  background-color: var(--bg-color);
   color: var(--text-color);
-  line-height: 1.5;
+  transition: background-color 0.6s, color 0.6s;
+  /* On ajoute une transition pour un changement doux entre thèmes */
 }
 
-/* NAVBAR */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ========== NAVBAR ========== */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #08131c;
+  background-color: var(--navbar-bg);
   padding: 1rem 2rem;
+  transition: background-color 0.6s;
 }
 
 .logo {
-  color: var(--gold-color);
   font-size: 1.5rem;
+  color: var(--primary-color);
   text-decoration: none;
   font-weight: bold;
 }
@@ -46,68 +71,63 @@ body {
   gap: 1rem;
 }
 
-.nav-links li {
-  display: inline-block;
-}
-
-.nav-links a {
+.nav-links li a {
   color: var(--text-color);
   text-decoration: none;
   padding: 0.5rem 1rem;
-  transition: background 0.3s, color 0.3s;
   border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
 .nav-links a.active,
 .nav-links a:hover {
-  background-color: var(--accent-color);
-  color: #000;
+  background-color: var(--highlight-color);
+  color: #fff;
 }
 
-/* HERO */
+/* ========== HERO ========== */
 .hero {
-  min-height: 70vh;
+  min-height: 60vh;
   background: linear-gradient(
-      rgba(14, 26, 38, 0.7),
-      rgba(14, 26, 38, 0.7)
+      rgba(255,255,255,0.6),
+      rgba(255,255,255,0.6)
     ),
-    url('https://images.unsplash.com/photo-1600376070644-c06be0fae2f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+    url('https://via.placeholder.com/1600x900');
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  /* Transition sur background impossible, c'est un trick plus poussé si on veut l'animer */
   padding: 2rem;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.lol-theme .hero {
+  background: linear-gradient(
+      rgba(14, 26, 38, 0.7),
+      rgba(14, 26, 38, 0.7)
+    ),
+    url('https://images.unsplash.com/photo-1600376070644-c06be0fae2f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
 }
 
-.hero p {
-  color: var(--secondary-text);
-  margin-bottom: 1.5rem;
-}
-
+/* ========== BOUTONS ========== */
 .btn {
   display: inline-block;
   background-color: var(--btn-bg);
-  color: var(--text-color);
+  color: #fff;
   padding: 0.75rem 1.5rem;
-  border: none;
   border-radius: 4px;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.3s;
+  transition: background-color 0.3s;
 }
 
 .btn:hover {
   background-color: var(--btn-hover-bg);
 }
 
-/* SECTIONS GÉNÉRALES */
+/* ========== SECTION GÉNÉRALE ========== */
 .page-section {
   padding: 3rem 2rem;
   max-width: 1200px;
@@ -119,7 +139,7 @@ body {
   margin-bottom: 2rem;
 }
 
-/* ABOUT SECTION */
+/* ========== ABOUT SECTION ========== */
 .about-section .about-content {
   display: flex;
   flex-wrap: wrap;
@@ -139,51 +159,47 @@ body {
   min-width: 300px;
 }
 
-.about-text p {
-  margin-bottom: 1rem;
-}
-
-/* FEATURED PROJECTS */
+/* ========== FEATURED PROJECTS ========== */
 .featured-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 1.5rem;
 }
 
 .featured-card {
-  background-color: #10202f;
-  padding: 1.5rem;
+  background-color: var(--card-bg);
   border-radius: 8px;
-  transition: transform 0.3s;
+  padding: 1rem;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 .featured-card:hover {
   transform: scale(1.02);
-}
-
-.featured-card img {
-  max-width: 100%;
-  border-radius: 6px;
-  margin-bottom: 1rem;
+  background-color: var(--card-hover);
 }
 
 .featured-card h3 {
-  color: var(--gold-color);
-  margin-bottom: 0.5rem;
+  margin: 1rem 0;
+  color: var(--primary-color);
 }
 
 .featured-card p {
-  color: var(--secondary-text);
+  color: var(--secondary-text-color);
   margin-bottom: 1rem;
 }
 
-/* CALL TO ACTION */
+/* ========== CALL TO ACTION ========== */
 .call-to-action {
   text-align: center;
-  background-color: #08131c;
-  padding: 2rem;
+  background-color: var(--card-bg);
   border-radius: 8px;
   margin-top: 2rem;
+  padding: 2rem;
+  transition: background-color 0.3s;
+}
+
+.lol-theme .call-to-action {
+  background-color: #10202f; 
 }
 
 .call-to-action h2 {
@@ -191,37 +207,37 @@ body {
 }
 
 .call-to-action p {
-  color: var(--secondary-text);
   margin-bottom: 1.5rem;
 }
 
-/* PROJETS */
+/* ========== PROJETS ========== */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
 
 .project-card {
-  background-color: #10202f;
-  padding: 1.5rem;
+  background-color: var(--card-bg);
   border-radius: 8px;
-  transition: transform 0.3s;
+  padding: 1.5rem;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 .project-card:hover {
   transform: scale(1.02);
+  background-color: var(--card-hover);
 }
 
 .project-card h3 {
   margin-bottom: 0.5rem;
-  color: var(--gold-color);
+  color: var(--primary-color);
 }
 
 .project-card p {
-  color: var(--secondary-text);
   margin-bottom: 1rem;
+  color: var(--secondary-text-color);
 }
 
 .project-card ul {
@@ -230,7 +246,7 @@ body {
   padding-left: 0;
 }
 
-/* CV */
+/* ========== CV ========== */
 .cv-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -239,26 +255,22 @@ body {
 }
 
 .cv-block {
-  background-color: #10202f;
+  background-color: var(--card-bg);
   padding: 1.5rem;
   border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.cv-block:hover {
+  background-color: var(--card-hover);
 }
 
 .cv-block h3 {
   margin-bottom: 1rem;
-  color: var(--gold-color);
+  color: var(--primary-color);
 }
 
-.cv-block ul {
-  list-style: none;
-  padding: 0;
-}
-
-.cv-block li {
-  margin-bottom: 0.5rem;
-}
-
-/* CONTACT */
+/* ========== CONTACT ========== */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -270,7 +282,7 @@ body {
 .contact-form label {
   margin-top: 1rem;
   margin-bottom: 0.3rem;
-  color: var(--gold-color);
+  color: var(--primary-color);
 }
 
 .contact-form input[type="text"],
@@ -278,28 +290,96 @@ body {
 .contact-form textarea {
   padding: 0.7rem;
   border-radius: 4px;
-  border: none;
+  border: 1px solid #ccc;
   outline: none;
+  background-color: #fff;
+  color: #333;
+}
+
+/* Dans le thème LoL, on force un style plus sombre */
+.lol-theme .contact-form input[type="text"],
+.lol-theme .contact-form input[type="email"],
+.lol-theme .contact-form textarea {
   background-color: #1b2a3a;
-  color: var(--text-color);
-  font-size: 1rem;
+  color: #fff;
+  border: 1px solid #444;
 }
 
-.contact-form button[type="submit"] {
-  align-self: flex-start;
-  margin-top: 1.5rem;
+/* ========== VEILLE ========== */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 2rem;
+  justify-content: center;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #08131c;
-  color: var(--secondary-text);
+.filter-bar input[type="text"],
+.filter-bar select {
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
+  gap: 1.5rem;
   margin-top: 2rem;
 }
 
-/* RESPONSIVE EXEMPLE */
+.article-card {
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.article-card:hover {
+  transform: scale(1.02);
+  background-color: var(--card-hover);
+}
+
+.article-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.article-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.article-meta {
+  font-size: 0.85rem;
+  color: var(--secondary-text-color);
+  margin-bottom: 0.5rem;
+}
+
+.article-desc {
+  margin-bottom: 1rem;
+  color: var(--secondary-text-color);
+}
+
+.article-tags {
+  font-style: italic;
+  color: var(--secondary-text-color);
+  margin-bottom: 1rem;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--footer-bg);
+  margin-top: 2rem;
+  transition: background-color 0.6s;
+}
+
+/* ========== RESPONSIVE EXEMPLE ========== */
 @media (max-width: 768px) {
   .cv-container {
     grid-template-columns: 1fr;
