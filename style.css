@@ -486,7 +486,6 @@ footer {
   transform: translate(-50%, -50%) scale(0);
   z-index: 9999;
   pointer-events: none;
-  /* La background sera définie en JS ou via style inline */
   animation: splashExpand 0.5s forwards ease-out;
 }
 
@@ -495,7 +494,7 @@ footer {
     transform: translate(-50%, -50%) scale(0);
   }
   100% {
-    transform: translate(-50%, -50%) scale(20); 
+    transform: translate(-50%, -50%) scale(20);
   }
 }
 
