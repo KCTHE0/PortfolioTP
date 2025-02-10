@@ -2,11 +2,12 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>Portfolio - Mon CV</title>
+  <title>Portfolio - CV</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="data.js" defer></script>
   <script src="script.js" defer></script>
 </head>
-<body>
+<body class="pro-theme">
 
   <header>
     <nav class="navbar">
@@ -15,6 +16,7 @@
         <li><a href="index.html">Accueil</a></li>
         <li><a href="projects.html">Projets</a></li>
         <li><a href="cv.html" class="active">CV</a></li>
+        <li><a href="veille.html">Veille</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -23,9 +25,8 @@
   <section class="page-section">
     <h2>Mon CV</h2>
     <div class="cv-container">
-      <!-- SECTION INFOS PERSO -->
       <div class="cv-block">
-        <h3>Informations personnelles</h3>
+        <h3>Informations Personnelles</h3>
         <ul>
           <li>Nom : [Ton Nom]</li>
           <li>Email : [Ton Email]</li>
@@ -34,35 +35,41 @@
         </ul>
       </div>
 
-      <!-- SECTION FORMATION -->
       <div class="cv-block">
         <h3>Formation</h3>
         <ul>
-          <li>BTS SIO, option [SLAM/SISR], [Années]</li>
-          <li>Bac [Spécialité], [Établissement], [Année]</li>
-          <li>Autres formations complémentaires…</li>
+          <li>BTS SIO - [Années]</li>
+          <li>Autres diplômes/Formation complémentaires</li>
         </ul>
       </div>
 
-      <!-- SECTION EXPERIENCES -->
       <div class="cv-block">
         <h3>Expériences Professionnelles</h3>
         <ul>
-          <li>Stage / Alternance : [Entreprise], [Dates], Missions principales…</li>
-          <li>Projets freelance ou associatifs…</li>
+          <li>Stage / Alternance : [Entreprise], [Dates]</li>
+          <li>Projets freelance / associatifs : [Descriptions]</li>
         </ul>
       </div>
 
-      <!-- SECTION COMPÉTENCES -->
       <div class="cv-block">
         <h3>Compétences</h3>
         <ul>
-          <li>Langages : HTML, CSS, JavaScript, PHP, etc.</li>
-          <li>Frameworks : React, Angular, Laravel, etc.</li>
-          <li>Base de données : MySQL, PostgreSQL, etc.</li>
-          <li>Autres : Git, Docker, etc.</li>
+          <li>HTML, CSS, JS, PHP, MySQL...</li>
+          <li>Frameworks : React, Angular, Laravel...</li>
+          <li>GIT, Docker, etc.</li>
         </ul>
       </div>
+
+      <div class="cv-block">
+        <h3>Loisirs / Centres d’intérêt</h3>
+        <ul>
+          <li>League of Legends (Jungle / Top Lane…)</li>
+          <li>IA, Nouvelles technologies</li>
+          <li>Voyages, musique…</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
   <footer>
     <p>© 2025 - Mon Nom. Tous droits réservés.</p>
