@@ -118,12 +118,27 @@ img {
   padding: 2rem;
 }
 
+/* Par défaut (pro-theme) */
+.pro-theme .hero {
+  background: url('img/hero-pro.jpg') center/cover no-repeat;
+}
+
+/* Thème LOL */
 .lol-theme .hero {
   background: linear-gradient(
       rgba(14, 26, 38, 0.7),
       rgba(14, 26, 38, 0.7)
     ),
-    url('https://images.unsplash.com/photo-1600376070644-c06be0fae2f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+    url('img/hero-lol.jpg') center/cover no-repeat;
+}
+
+/* Thème Mario */
+.mario-theme .hero {
+  background: linear-gradient(
+      rgba(255,255,255,0.4),
+      rgba(255,255,255,0.4)
+    ),
+    url('img/hero-mario.jpg') center/cover no-repeat;
 }
 
 /* ========== BOUTONS ========== */
