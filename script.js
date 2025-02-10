@@ -1,14 +1,11 @@
 // script.js
 
-// Petit exemple d’animation sur le clic d’un bouton ou sur le chargement de page.
-// Ici, on fait simplement un console.log et une petite animation d’apparition.
-
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("Le site est chargé !");
-  const elements = document.querySelectorAll(".project-card, .cv-block, .contact-form");
+  console.log("Site chargé !");
 
+  // Animation d’apparition sur certaines sections
+  const elements = document.querySelectorAll(".featured-card, .project-card, .cv-block, .contact-form, .about-section, .call-to-action");
   elements.forEach(el => {
-    // Animation d’opacité à l’apparition
     el.style.opacity = 0;
     el.style.transform = "translateY(20px)";
 
@@ -18,4 +15,26 @@ document.addEventListener("DOMContentLoaded", () => {
       el.style.transform = "translateY(0)";
     }, 300);
   });
+
+  // Easter Egg: Konami Code
+  const konamiCode = [38,38,40,40,37,39,37,39,66,65]; 
+  let konamiIndex = 0;
+
+  document.addEventListener("keydown", (e) => {
+    if (e.keyCode === konamiCode[konamiIndex]) {
+      konamiIndex++;
+      if (konamiIndex === konamiCode.length) {
+        triggerEasterEgg();
+        konamiIndex = 0;
+      }
+    } else {
+      konamiIndex = 0;
+    }
+  });
 });
+
+// Action déclenchée par l’easter egg
+function triggerEasterEgg() {
+  // Par exemple, on affiche une pop-up
+  alert("C'est bien mais tu croyais faire quoi la ?");
+}
