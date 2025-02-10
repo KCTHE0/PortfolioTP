@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Écoute globale des touches
 document.addEventListener("keydown", (e) => {
-  // 3.1) Konami code
+  // 1) Konami code
   if (e.keyCode === konamiCode[konamiIndex]) {
     konamiIndex++;
     if (konamiIndex === konamiCode.length) {
@@ -37,41 +37,41 @@ document.addEventListener("keydown", (e) => {
     konamiIndex = 0;
   }
 
-  // 3.2) Accumuler le texte tapé (uniquement les caractères imprimables)
+  // 2) Accumuler le texte tapé (uniquement caractères imprimables)
   if (e.key.length === 1) {
     typedText += e.key;
   }
 
-  // Limiter la longueur de typedText pour éviter l'explosion de mémoire
+  // on limite typedText pour éviter trop de caractères
   if (typedText.length > 50) {
     typedText = typedText.slice(-50);
   }
 
-  // 3.3) Vérifier la présence de "je te vois"
+  // 3) Easter Egg "je te vois"
   if (typedText.toLowerCase().includes("je te vois")) {
     alert("Tu m'as vu... et je te vois aussi !");
     typedText = "";
   }
 
-  // 3.4) Vérifier la présence de "league of legends"
+  // 4) Thème LoL si "league of legends"
   if (typedText.toLowerCase().includes("league of legends")) {
-    setThemeLoL(); // Splash par défaut
+    setThemeLoL();
     typedText = "";
   }
 
-  // 3.5) Vérifier la présence de "mario"
+  // 5) Thème Mario si "mario"
   if (typedText.toLowerCase().includes("mario")) {
     setThemeMario();
     typedText = "";
   }
 
-  // 3.6) Vérifier la présence de "pro"
+  // 6) Thème Pro si "pro"
   if (typedText.toLowerCase().includes("pro")) {
     setThemePro();
     typedText = "";
   }
 
-  // 3.7) Vérifier la présence de "luigi"
+  // 7) Thème Luigi si "luigi"
   if (typedText.toLowerCase().includes("luigi")) {
     setThemeLuigi();
     typedText = "";
@@ -79,102 +79,15 @@ document.addEventListener("keydown", (e) => {
 });
 
 // ======================
-// 4) FONCTIONS DU KONAMI
+// KONAMI CODE FUNCTION
 // ======================
 function triggerKonamiEgg() {
   alert("Konami Code détecté ! Super move déverrouillé !");
 }
 
 // =========================
-// 5) GESTION DES THEMES
+// THEMES MANAGEMENT
 // =========================
-
-// Lire le thème stocké dans localStorage ou Pro par défaut
 function applyStoredTheme() {
   const stored = localStorage.getItem("theme");
-  if (stored === THEME_LOL) {
-    setThemeLoL(false);
-  } else if (stored === THEME_MARIO) {
-    setThemeMario(false);
-  } else if (stored === THEME_LUIGI) {
-    setThemeLuigi(false);
-  } else {
-    setThemePro(false);
-  }
-}
-
-// -- Thème Pro --
-function setThemePro(withSplash = true) {
-  document.body.classList.remove("lol-theme", "mario-theme", "luigi-theme");
-  document.body.classList.add("pro-theme");
-  localStorage.setItem("theme", THEME_PRO);
-
-  // Si tu as un logo spécifique :
-  updateLogo("img/logo-pro.png");
-
-  // Splash anim
-  if (withSplash) playSplash("#007acc"); 
-}
-
-// -- Thème LoL --
-function setThemeLoL(withSplash = true) {
-  document.body.classList.remove("pro-theme", "mario-theme", "luigi-theme");
-  document.body.classList.add("lol-theme");
-  localStorage.setItem("theme", THEME_LOL);
-
-  // Logo
-  updateLogo("img/logo-lol.png");
-
-  if (withSplash) playSplash("#0E1A26");
-}
-
-// -- Thème Mario --
-function setThemeMario(withSplash = true) {
-  document.body.classList.remove("pro-theme", "lol-theme", "luigi-theme");
-  document.body.classList.add("mario-theme");
-  localStorage.setItem("theme", THEME_MARIO);
-
-  updateLogo("img/logo-mario.png");
-
-  if (withSplash) playSplash("#e32407");
-}
-
-// -- Thème Luigi --
-function setThemeLuigi(withSplash = true) {
-  document.body.classList.remove("pro-theme", "lol-theme", "mario-theme");
-  document.body.classList.add("luigi-theme");
-  localStorage.setItem("theme", THEME_LUIGI);
-
-  updateLogo("img/logo-luigi.png");
-
-  if (withSplash) playSplash("#1e9c1e");
-}
-
-// =========================
-// 6) SPLASH ANIMATION
-// =========================
-function playSplash(color) {
-  // Créer un div .theme-splash
-  const splash = document.createElement("div");
-  splash.className = "theme-splash";
-  splash.style.backgroundColor = color;
-
-  // L'ajouter au body
-  document.body.appendChild(splash);
-
-  // Le retirer après l'animation
-  splash.addEventListener("animationend", () => {
-    splash.remove();
-  });
-}
-
-// =========================
-// 7) CHANGER LE LOGO
-// =========================
-function updateLogo(src) {
-  const logoImg = document.getElementById("logo-img");
-  if (logoImg) {
-    logoImg.src = src;
-  }
-}
-
+  if (stored === THEME_LOL)
