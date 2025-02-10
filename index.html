@@ -1,13 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <title>Portfolio - Accueil</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="data.js" defer></script> <!-- On peut charger data.js n'importe où, il sert surtout à veille.html -->
   <script src="script.js" defer></script>
 </head>
-<body>
+<body class="pro-theme">
 
   <!-- HEADER / NAV -->
   <header>
@@ -17,6 +17,7 @@
         <li><a href="index.html" class="active">Accueil</a></li>
         <li><a href="projects.html">Projets</a></li>
         <li><a href="cv.html">CV</a></li>
+        <li><a href="veille.html">Veille</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -26,38 +27,36 @@
   <section class="hero">
     <div class="hero-text">
       <h1>Bienvenue sur mon Portfolio</h1>
-      <p>Développeur passionné et joueur invétéré, je vous présente mes projets et mon parcours.</p>
+      <p>Étudiant en BTS SIO, passionné de développement web et de nouvelles technologies.</p>
       <a href="projects.html" class="btn">Voir mes Projets</a>
     </div>
   </section>
 
-  <!-- SECTION A PROPOS -->
+  <!-- SECTION À PROPOS -->
   <section class="page-section about-section">
     <h2>À propos de moi</h2>
     <div class="about-content">
       <img src="https://via.placeholder.com/200x200" alt="Photo de profil" class="profile-pic">
       <div class="about-text">
-        <p>Étudiant en BTS SIO, je suis passionné par le développement web et l’univers de League of Legends. J’aime relever des défis techniques et créatifs. En dehors des lignes de code, je suis souvent sur la Faille de l’Invocateur pour affiner mes stratégies !</p>
-        <p>Mon objectif : allier passion du jeu et expertise technique pour créer des projets innovants et réactifs. Parcourez ce portfolio pour découvrir mes réalisations, mon parcours et mes ambitions.</p>
+        <p>Bienvenue ! Je suis en formation BTS SIO, avec une forte affinité pour le développement web. Curieux et créatif, j’aime explorer l’univers tech, et je m’intéresse tout particulièrement à l’Intelligence Artificielle et son impact sur notre métier.</p>
       </div>
     </div>
   </section>
 
-  <!-- SECTION PROJETS A LA UNE -->
+  <!-- SECTION PROJETS À LA UNE -->
   <section class="page-section featured-projects">
     <h2>Projets à la Une</h2>
     <div class="featured-grid">
       <article class="featured-card">
         <img src="https://via.placeholder.com/400x200" alt="Aperçu Projet 1" />
-        <h3>Projet « Forum LoL »</h3>
-        <p>Un forum de discussion dédié aux joueurs. Création d’un front-end dynamique et d’un back-end sécurisé.</p>
+        <h3>Forum LoL</h3>
+        <p>Une plateforme de discussion pour la communauté LoL, avec une authentification sécurisée et un design responsive.</p>
         <a href="projects.html" class="btn">En savoir plus</a>
       </article>
-
       <article class="featured-card">
         <img src="https://via.placeholder.com/400x200" alt="Aperçu Projet 2" />
-        <h3>Application Stats</h3>
-        <p>Une app qui récupère en temps réel des statistiques de matchs via l’API Riot et les affiche de façon interactive.</p>
+        <h3>App Stats Riot</h3>
+        <p>Application récupérant des stats via l’API Riot en temps réel, affichage dynamique avec React.</p>
         <a href="projects.html" class="btn">En savoir plus</a>
       </article>
     </div>
@@ -66,7 +65,7 @@
   <!-- SECTION CALL TO ACTION -->
   <section class="page-section call-to-action">
     <h2>Intéressé pour collaborer ?</h2>
-    <p>N’hésitez pas à consulter mon CV ou à me contacter directement. Je suis toujours ouvert aux nouvelles opportunités et aux challenges !</p>
+    <p>N’hésitez pas à parcourir mes projets, mon CV et ma veille. Je suis ouvert aux propositions de stage, d’alternance ou de freelance !</p>
     <a href="contact.html" class="btn">Contactez-moi</a>
   </section>
 
