@@ -28,6 +28,21 @@
   --footer-bg: #08131c;
 }
 
+/* Thème Mario */
+.mario-theme {
+  --bg-color: #FDEDEC;          /* Un fond clair un peu rosé */
+  --text-color: #3E2723;
+  --secondary-text-color: #6D4C41;
+  --primary-color: #E53935;     /* Rouge Mario */
+  --highlight-color: #FFEB3B;   /* Jaune */
+  --card-bg: #fff;
+  --card-hover: #f7dcd8;
+  --btn-bg: #E53935;
+  --btn-hover-bg: #D32F2F;
+  --navbar-bg: #F5F5F5;
+  --footer-bg: #F5F5F5;
+}
+
 /* ========== RESET & BASE ========== */
 * {
   margin: 0;
