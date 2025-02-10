@@ -91,3 +91,73 @@ function triggerKonamiEgg() {
 function applyStoredTheme() {
   const stored = localStorage.getItem("theme");
   if (stored === THEME_LOL)
+      if (stored === THEME_LOL) {
+    setThemeLoL(false);
+  } else if (stored === THEME_MARIO) {
+    setThemeMario(false);
+  } else if (stored === THEME_LUIGI) {
+    setThemeLuigi(false);
+  } else {
+    setThemePro(false);
+  }
+}
+
+function setThemePro(withSplash = true) {
+  document.body.classList.remove("lol-theme", "mario-theme", "luigi-theme");
+  document.body.classList.add("pro-theme");
+  localStorage.setItem("theme", THEME_PRO);
+  updateLogo("img/logo-pro.png");
+  if (withSplash) playSplash("#007acc");
+}
+
+function setThemeLoL(withSplash = true) {
+  document.body.classList.remove("pro-theme", "mario-theme", "luigi-theme");
+  document.body.classList.add("lol-theme");
+  localStorage.setItem("theme", THEME_LOL);
+  updateLogo("img/logo-lol.png");
+  if (withSplash) playSplash("#0E1A26");
+}
+
+function setThemeMario(withSplash = true) {
+  document.body.classList.remove("pro-theme", "lol-theme", "luigi-theme");
+  document.body.classList.add("mario-theme");
+  localStorage.setItem("theme", THEME_MARIO);
+  updateLogo("img/logo-mario.png");
+  if (withSplash) playSplash("#e32407");
+}
+
+function setThemeLuigi(withSplash = true) {
+  document.body.classList.remove("pro-theme", "lol-theme", "mario-theme");
+  document.body.classList.add("luigi-theme");
+  localStorage.setItem("theme", THEME_LUIGI);
+  updateLogo("img/logo-luigi.png");
+  if (withSplash) playSplash("#1e9c1e");
+}
+
+// =========================
+// OVERLAY FADE ANIMATION
+// =========================
+function playSplash(color) {
+  // On crée un div overlay en plein écran
+  const overlay = document.createElement("div");
+  overlay.className = "theme-splash-overlay";
+  overlay.style.backgroundColor = color;
+
+  document.body.appendChild(overlay);
+
+  // Après l'animation, on supprime le div
+  overlay.addEventListener("animationend", () => {
+    overlay.remove();
+  });
+}
+
+// =========================
+// LOGO DYNAMIQUE
+// =========================
+function updateLogo(src) {
+  const logoImg = document.getElementById("logo-img");
+  if (logoImg) {
+    logoImg.src = src;
+  }
+}
+
