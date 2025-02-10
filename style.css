@@ -7,28 +7,28 @@
    <body class="mario-theme">
 */
 
-/* ========= THEME PRO (sobre et moderne) ========= */
+/* ========== THEME PRO (fond blanc) ========== */
 .pro-theme {
-  --bg-color: #f4f5f7;         /* Gris clair un peu soutenu */
-  --text-color: #2c2c2c;
-  --secondary-text-color: #565656;
-  --primary-color: #007acc;    /* Bleu principal */
-  --highlight-color: #00a9ff;  /* Bleu plus clair au survol */
-  --card-bg: #ffffff;
-  --card-hover: #f9f9f9;
+  --bg-color: #ffffff;          /* Fond blanc */
+  --text-color: #333333;
+  --secondary-text-color: #555555; 
+  --primary-color: #007acc;     /* Bleu principal */
+  --highlight-color: #00a9ff;   /* Pour le hover / accent */
+  --card-bg: #ffffff;           
+  --card-hover: #f5f5f5;       
   --btn-bg: #007acc;
   --btn-hover-bg: #005a8c;
-  --navbar-bg: #232323;        /* Barre de nav plus sombre */
-  --footer-bg: #1b1b1b;        /* Footer encore plus sombre */
+  --navbar-bg: #ffffff;         /* Navbar blanche */
+  --footer-bg: #dddddd;         /* Footer gris clair */
 }
 
-/* ========= THEME LOL (inchangé) ========= */
+/* ========== THEME LOL (inchangé) ========== */
 .lol-theme {
   --bg-color: #0E1A26;       
   --text-color: #ffffff;     
   --secondary-text-color: #cccccc;
   --primary-color: #C7B377;  
-  --highlight-color: #00C0C8; 
+  --highlight-color: #00C0C8;  
   --card-bg: #10202f;
   --card-hover: #1b2a3a;
   --btn-bg: #123447;
@@ -37,28 +37,22 @@
   --footer-bg: #08131c;
 }
 
-/* ========= THEME MARIO (plus rouge) ========= */
+/* ========== THEME MARIO (rouge dominant) ========== */
 .mario-theme {
-  /* Fond global rosé pour afficher du rouge sans flinguer les yeux */
-  --bg-color: #ffe7e3;            
+  --bg-color: #ffe7e3;       /* Léger rosé */
   --text-color: #2c2c2c;
   --secondary-text-color: #4c4c4c;
-  /* Couleur principale : rouge Mario */
-  --primary-color: #e32407;       
-  /* Couleur "highlight" / survol : un rouge un poil plus foncé */
-  --highlight-color: #c51e05;     
-  /* Fond des cartes : blanc, pour contraster avec le rouge */
+  --primary-color: #e32407;   /* Rouge Mario */
+  --highlight-color: #c51e05; /* Rouge plus foncé pour hover */
   --card-bg: #ffffff;
-  --card-hover: #ffd8d2; /* Un peu plus rouge rosé au survol */
-  /* Boutons : rouge également */
+  --card-hover: #ffd8d2;     /* Teinte plus rosée au survol */
   --btn-bg: #e32407;
   --btn-hover-bg: #c51e05;
-  /* Navbar & footer : rouge Mario */
-  --navbar-bg: #e32407;
-  --footer-bg: #e32407;
+  --navbar-bg: #e32407;      /* Navbar rouge */
+  --footer-bg: #e32407;      
 }
 
-/* ========= RESET & BASE ========= */
+/* ========== RESET & BASE ========== */
 * {
   margin: 0;
   padding: 0;
@@ -77,13 +71,12 @@ img {
   display: block;
 }
 
-/* ========= NAVBAR ========= */
+/* ========== NAVBAR ========== */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--navbar-bg);
-  /* Petit dégradé en Pro theme (override plus bas) */
   padding: 1rem 2rem;
   transition: background-color 0.6s;
 }
@@ -92,7 +85,7 @@ img {
   font-size: 1.5rem;
   text-decoration: none;
   font-weight: bold;
-  color: var(--highlight-color);
+  color: var(--primary-color);
 }
 
 .nav-links {
@@ -102,20 +95,20 @@ img {
 }
 
 .nav-links li a {
-  color: #fff; /* on force la navbar en blanc pour le texte */
+  color: var(--text-color);
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 4px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .nav-links a.active,
 .nav-links a:hover {
   background-color: var(--highlight-color);
-  color: #000;
+  color: #fff;
 }
 
-/* ========= HERO SECTION ========= */
+/* ========== HERO SECTION ========== */
 .hero {
   min-height: 60vh;
   background: linear-gradient(
@@ -141,6 +134,7 @@ img {
   color: var(--secondary-text-color);
 }
 
+/* ========== BOUTONS ========== */
 .btn {
   display: inline-block;
   background-color: var(--btn-bg);
@@ -156,7 +150,7 @@ img {
   background-color: var(--btn-hover-bg);
 }
 
-/* ========= SECTIONS GÉNÉRALES ========= */
+/* ========== SECTION GÉNÉRALE ========== */
 .page-section {
   padding: 3rem 2rem;
   max-width: 1200px;
@@ -168,7 +162,7 @@ img {
   margin-bottom: 2rem;
 }
 
-/* ========= ABOUT SECTION ========= */
+/* ========== ABOUT SECTION ========== */
 .about-section .about-content {
   display: flex;
   flex-wrap: wrap;
@@ -188,7 +182,7 @@ img {
   min-width: 300px;
 }
 
-/* ========= FEATURED PROJECTS ========= */
+/* ========== FEATURED PROJECTS ========== */
 .featured-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px,1fr));
@@ -205,8 +199,7 @@ img {
 .featured-card:hover {
   transform: scale(1.02);
   background-color: var(--card-hover);
-  /* Petit box-shadow pour le thème Pro notamment */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .featured-card h3 {
@@ -219,7 +212,7 @@ img {
   margin-bottom: 1rem;
 }
 
-/* ========= CALL TO ACTION ========= */
+/* ========== CALL TO ACTION ========== */
 .call-to-action {
   text-align: center;
   background-color: var(--card-bg);
@@ -231,7 +224,7 @@ img {
 
 .call-to-action:hover {
   background-color: var(--card-hover);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .call-to-action h2 {
@@ -242,7 +235,7 @@ img {
   margin-bottom: 1.5rem;
 }
 
-/* ========= PROJETS (projects.html) ========= */
+/* ========== PROJETS ========== */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -260,7 +253,7 @@ img {
 .project-card:hover {
   transform: scale(1.02);
   background-color: var(--card-hover);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .project-card h3 {
@@ -280,7 +273,7 @@ img {
   color: var(--secondary-text-color);
 }
 
-/* ========= CV (cv.html) ========= */
+/* ========== CV ========== */
 .cv-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -297,7 +290,7 @@ img {
 
 .cv-block:hover {
   background-color: var(--card-hover);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .cv-block h3 {
@@ -315,7 +308,7 @@ img {
   margin-bottom: 0.5rem;
 }
 
-/* ========= CONTACT (contact.html) ========= */
+/* ========== CONTACT ========== */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -341,7 +334,7 @@ img {
   color: #333;
 }
 
-/* ========= VEILLE (veille.html) ========= */
+/* ========== VEILLE ========== */
 .filter-bar {
   display: flex;
   flex-wrap: wrap;
@@ -375,7 +368,7 @@ img {
 .article-card:hover {
   transform: scale(1.02);
   background-color: var(--card-hover);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .article-card img {
@@ -407,33 +400,18 @@ img {
   margin-bottom: 1rem;
 }
 
-/* ========= FOOTER ========= */
+/* ========== FOOTER ========== */
 footer {
   text-align: center;
   padding: 1rem;
   background-color: var(--footer-bg);
   margin-top: 2rem;
   transition: background-color 0.6s;
-  color: #fff; /* Contraste sur footer sombre */
+  color: #333; /* Contraste sur le footer clair pro */
 }
 
-/* ========= OVERRIDES THEME-SPECIFIQUES ========== */
-
-/* Thème Pro : override navbar gradient */
-.pro-theme .navbar {
-  background: linear-gradient(90deg, #232323 0%, #2e2e2e 100%);
-}
-
-/* Thème Pro : hero background override */
-.pro-theme .hero {
-  background: linear-gradient(
-      rgba(35, 35, 35, 0.2),
-      rgba(35, 35, 35, 0.2)
-    ),
-    url('img/hero-pro.jpg') center/cover no-repeat;
-}
-
-/* Thème LoL : hero background (pas changé) */
+/* ========== OVERRIDES THEME-SPECIFIQUES ========== */
+/* LOl theme hero */
 .lol-theme .hero {
   background: linear-gradient(
       rgba(14, 26, 38, 0.7),
@@ -442,7 +420,7 @@ footer {
     url('img/hero-lol.jpg') center/cover no-repeat;
 }
 
-/* Thème Mario : hero background */
+/* Mario theme hero */
 .mario-theme .hero {
   background: linear-gradient(
       rgba(255, 255, 255, 0.3),
@@ -451,12 +429,7 @@ footer {
     url('img/hero-mario.jpg') center/cover no-repeat;
 }
 
-/* Exemple: forcer la couleur de la nav-links en Mario si trop rouge */
-.mario-theme .nav-links li a {
-  color: #fff; /* On garde du blanc pour contraster sur la navbar rouge */
-}
-
-/* ========= RESPONSIVE (exemple) ========= */
+/* ========== RESPONSIVE (exemple) ========== */
 @media (max-width: 768px) {
   .cv-container {
     grid-template-columns: 1fr;
@@ -467,4 +440,5 @@ footer {
     text-align: center;
   }
 }
+
 
