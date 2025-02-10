@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <title>Portfolio - Projets</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="data.js" defer></script>
   <script src="script.js" defer></script>
 </head>
-<body>
+<body class="pro-theme">
 
   <header>
     <nav class="navbar">
@@ -15,6 +16,7 @@
         <li><a href="index.html">Accueil</a></li>
         <li><a href="projects.html" class="active">Projets</a></li>
         <li><a href="cv.html">CV</a></li>
+        <li><a href="veille.html">Veille</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
@@ -22,46 +24,38 @@
 
   <section class="page-section">
     <h2>Mes Projets</h2>
-    <p>Voici une liste plus complète de mes projets réalisés durant ces deux dernières années de BTS SIO.</p>
+    <p>Liste des projets réalisés durant mes 2 ans de BTS SIO, ainsi que quelques projets personnels ou associatifs.</p>
 
     <div class="projects-grid">
-      <!-- Exemple de projet 1 -->
       <article class="project-card">
         <h3>Projet 1 : Forum LoL</h3>
-        <p>Développement d’une plateforme de discussion. Fonctionnalités principales : système d’authentification, forums organisés par rôle/champion, etc.</p>
+        <p>Développement d’une plateforme de discussion autour de League of Legends, avec espaces dédiés à chaque rôle et champion.</p>
         <ul>
           <li>Technos : HTML, CSS, JavaScript, PHP/MySQL</li>
           <li>Durée : 3 mois</li>
-          <li><strong>Challenges :</strong> Sécurisation, gestion des sessions, ergonomie</li>
         </ul>
         <a href="#" class="btn">Voir plus</a>
       </article>
 
-      <!-- Exemple de projet 2 -->
       <article class="project-card">
         <h3>Projet 2 : Application Stats Riot</h3>
-        <p>Application desktop (ou web) permettant de récupérer des statistiques en temps réel via l’API Riot.</p>
+        <p>Application permettant de récupérer des stats via l’API Riot, et d’afficher les résultats en temps réel.</p>
         <ul>
-          <li>Technos : Node.js, Express, React</li>
+          <li>Technos : React, Node.js, Express</li>
           <li>Durée : 2 mois</li>
-          <li><strong>Challenges :</strong> Intégration d’API, gestion des promesses asynchrones</li>
         </ul>
         <a href="#" class="btn">Voir plus</a>
       </article>
 
-      <!-- Projet 3 -->
       <article class="project-card">
         <h3>Projet 3 : Portfolio Dynamique</h3>
-        <p>Site web géré via un back-office pour publier rapidement du contenu (articles, projets, etc.).</p>
+        <p>Site web géré via un back-office (CRUD) pour publier rapidement du contenu.</p>
         <ul>
           <li>Technos : PHP, MySQL, Bootstrap</li>
           <li>Durée : 1 mois</li>
-          <li><strong>Challenges :</strong> CRUD complet, mise en place d’un admin panel</li>
         </ul>
         <a href="#" class="btn">Voir plus</a>
       </article>
-
-      <!-- Ajoute autant de projets que tu veux ici -->
     </div>
   </section>
 
@@ -71,5 +65,4 @@
 
 </body>
 </html>
-
 
