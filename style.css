@@ -2,35 +2,33 @@
    =====================
    THEMES PRINCIPAUX
    =====================
-   Pour rappel :
-   - <body class="pro-theme"> (défaut)
-   - <body class="lol-theme">
-   - <body class="mario-theme">
+   <body class="pro-theme"> (défaut)
+   <body class="lol-theme">
+   <body class="mario-theme">
 */
 
-/* ========= THEME PRO ========= */
+/* ========= THEME PRO (sobre et moderne) ========= */
 .pro-theme {
-  /* Fond plus clair mais on va donner un peu de gris pour ne pas être trop "blanc" */
-  --bg-color: #eceeef;          
-  --text-color: #212529;        /* Gris foncé pour le texte */
-  --secondary-text-color: #495057; 
-  --primary-color: #007acc;     /* Bleu pro */
-  --highlight-color: #269fff;   /* Bleu un peu plus clair pour hover/accents */
-  --card-bg: #ffffff;           /* Fonds de cartes blancs */
-  --card-hover: #f5f5f5;       
+  --bg-color: #f4f5f7;         /* Gris clair un peu soutenu */
+  --text-color: #2c2c2c;
+  --secondary-text-color: #565656;
+  --primary-color: #007acc;    /* Bleu principal */
+  --highlight-color: #00a9ff;  /* Bleu plus clair au survol */
+  --card-bg: #ffffff;
+  --card-hover: #f9f9f9;
   --btn-bg: #007acc;
   --btn-hover-bg: #005a8c;
-  --navbar-bg: #2b2b2b;         /* Navbar sombre */
-  --footer-bg: #495057;         /* Footer un peu plus foncé */
+  --navbar-bg: #232323;        /* Barre de nav plus sombre */
+  --footer-bg: #1b1b1b;        /* Footer encore plus sombre */
 }
 
-/* ========= THEME LOL (comme avant) ========= */
+/* ========= THEME LOL (inchangé) ========= */
 .lol-theme {
-  --bg-color: #0E1A26;       /* Bleu nuit / sombre */
+  --bg-color: #0E1A26;       
   --text-color: #ffffff;     
   --secondary-text-color: #cccccc;
-  --primary-color: #C7B377;  /* Doré discret */
-  --highlight-color: #00C0C8;  
+  --primary-color: #C7B377;  
+  --highlight-color: #00C0C8; 
   --card-bg: #10202f;
   --card-hover: #1b2a3a;
   --btn-bg: #123447;
@@ -39,20 +37,25 @@
   --footer-bg: #08131c;
 }
 
-/* ========= THEME MARIO ========= */
+/* ========= THEME MARIO (plus rouge) ========= */
 .mario-theme {
-  /* On va exagérer les couleurs Mario : fond bleu clair, texte foncé, etc. */
-  --bg-color: #d7e9ff;             /* Bleu clair en fond global */
+  /* Fond global rosé pour afficher du rouge sans flinguer les yeux */
+  --bg-color: #ffe7e3;            
   --text-color: #2c2c2c;
   --secondary-text-color: #4c4c4c;
-  --primary-color: #d52b1e;        /* Rouge Mario */
-  --highlight-color: #ffc700;      /* Jaune vif */
+  /* Couleur principale : rouge Mario */
+  --primary-color: #e32407;       
+  /* Couleur "highlight" / survol : un rouge un poil plus foncé */
+  --highlight-color: #c51e05;     
+  /* Fond des cartes : blanc, pour contraster avec le rouge */
   --card-bg: #ffffff;
-  --card-hover: #ffefd8;          /* Un léger beige pour hover */
-  --btn-bg: #d52b1e;              /* Rouge */
-  --btn-hover-bg: #b51c0e;        /* Rouge plus sombre au survol */
-  --navbar-bg: #3165c3;           /* Un bleu "Mario" pour la navbar */
-  --footer-bg: #3165c3;           /* Même couleur que la navbar ou un peu plus sombre */
+  --card-hover: #ffd8d2; /* Un peu plus rouge rosé au survol */
+  /* Boutons : rouge également */
+  --btn-bg: #e32407;
+  --btn-hover-bg: #c51e05;
+  /* Navbar & footer : rouge Mario */
+  --navbar-bg: #e32407;
+  --footer-bg: #e32407;
 }
 
 /* ========= RESET & BASE ========= */
@@ -80,6 +83,7 @@ img {
   justify-content: space-between;
   align-items: center;
   background-color: var(--navbar-bg);
+  /* Petit dégradé en Pro theme (override plus bas) */
   padding: 1rem 2rem;
   transition: background-color 0.6s;
 }
@@ -88,7 +92,7 @@ img {
   font-size: 1.5rem;
   text-decoration: none;
   font-weight: bold;
-  color: var(--highlight-color);  /* Couleur mise en avant pour le logo */
+  color: var(--highlight-color);
 }
 
 .nav-links {
@@ -98,11 +102,11 @@ img {
 }
 
 .nav-links li a {
-  color: #fff; /* on force la navbar en blanc par défaut, pour le texte */
+  color: #fff; /* on force la navbar en blanc pour le texte */
   text-decoration: none;
   padding: 0.5rem 1rem;
   border-radius: 4px;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s;
 }
 
 .nav-links a.active,
@@ -114,7 +118,6 @@ img {
 /* ========= HERO SECTION ========= */
 .hero {
   min-height: 60vh;
-  /* On met un fond "par défaut" pour pro / mario plus assumé dans un override plus bas */
   background: linear-gradient(
       rgba(255,255,255,0.7),
       rgba(255,255,255,0.7)
@@ -196,12 +199,14 @@ img {
   background-color: var(--card-bg);
   border-radius: 8px;
   padding: 1rem;
-  transition: transform 0.3s, background-color 0.3s;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
 }
 
 .featured-card:hover {
   transform: scale(1.02);
   background-color: var(--card-hover);
+  /* Petit box-shadow pour le thème Pro notamment */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .featured-card h3 {
@@ -221,7 +226,12 @@ img {
   border-radius: 8px;
   margin-top: 2rem;
   padding: 2rem;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.call-to-action:hover {
+  background-color: var(--card-hover);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .call-to-action h2 {
@@ -244,12 +254,13 @@ img {
   background-color: var(--card-bg);
   border-radius: 8px;
   padding: 1.5rem;
-  transition: transform 0.3s, background-color 0.3s;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
 }
 
 .project-card:hover {
   transform: scale(1.02);
   background-color: var(--card-hover);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .project-card h3 {
@@ -266,6 +277,7 @@ img {
   margin-bottom: 1rem;
   list-style: none;
   padding-left: 0;
+  color: var(--secondary-text-color);
 }
 
 /* ========= CV (cv.html) ========= */
@@ -280,11 +292,12 @@ img {
   background-color: var(--card-bg);
   padding: 1.5rem;
   border-radius: 8px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .cv-block:hover {
   background-color: var(--card-hover);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .cv-block h3 {
@@ -356,12 +369,13 @@ img {
   background-color: var(--card-bg);
   padding: 1rem;
   border-radius: 8px;
-  transition: transform 0.3s, background-color 0.3s;
+  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
 }
 
 .article-card:hover {
   transform: scale(1.02);
   background-color: var(--card-hover);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .article-card img {
@@ -400,21 +414,26 @@ footer {
   background-color: var(--footer-bg);
   margin-top: 2rem;
   transition: background-color 0.6s;
-  color: #fff; /* Contraste pour la pro-theme et la mario-theme */
+  color: #fff; /* Contraste sur footer sombre */
 }
 
 /* ========= OVERRIDES THEME-SPECIFIQUES ========== */
 
-/* Thème Pro : hero background */
+/* Thème Pro : override navbar gradient */
+.pro-theme .navbar {
+  background: linear-gradient(90deg, #232323 0%, #2e2e2e 100%);
+}
+
+/* Thème Pro : hero background override */
 .pro-theme .hero {
   background: linear-gradient(
-      rgba(44, 44, 44, 0.4),
-      rgba(44, 44, 44, 0.2)
+      rgba(35, 35, 35, 0.2),
+      rgba(35, 35, 35, 0.2)
     ),
     url('img/hero-pro.jpg') center/cover no-repeat;
 }
 
-/* Thème LoL : hero background */
+/* Thème LoL : hero background (pas changé) */
 .lol-theme .hero {
   background: linear-gradient(
       rgba(14, 26, 38, 0.7),
@@ -426,16 +445,15 @@ footer {
 /* Thème Mario : hero background */
 .mario-theme .hero {
   background: linear-gradient(
-      rgba(255, 255, 255, 0.4),
-      rgba(255, 255, 255, 0.4)
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3)
     ),
     url('img/hero-mario.jpg') center/cover no-repeat;
 }
 
-/* Dans la mario-theme, on veut un style plus coloré pour le call-to-action, 
-   juste pour montrer un exemple d'override */
-.mario-theme .call-to-action {
-  background-color: #fff5d8; 
+/* Exemple: forcer la couleur de la nav-links en Mario si trop rouge */
+.mario-theme .nav-links li a {
+  color: #fff; /* On garde du blanc pour contraster sur la navbar rouge */
 }
 
 /* ========= RESPONSIVE (exemple) ========= */
@@ -443,9 +461,10 @@ footer {
   .cv-container {
     grid-template-columns: 1fr;
   }
-  
+
   .about-content {
     flex-direction: column;
     text-align: center;
   }
 }
+
