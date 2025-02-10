@@ -8,7 +8,7 @@
  <body class="luigi-theme">
 */
 
-/* ========== THEME PRO (blanc sobre) ========== */
+/* ========== THEME PRO (fond blanc) ========== */
 .pro-theme {
   --bg-color: #ffffff;          
   --text-color: #333333;
@@ -44,43 +44,32 @@
   --text-color: #2c2c2c;
   --secondary-text-color: #4c4c4c;
 
-  /* Couleur principale (titres, etc.) = jaune pièces */
-  --primary-color: #ffdd00;
-  /* highlight = rouge foncé pour survol */
-  --highlight-color: #c51e05; 
+  --primary-color: #ffdd00;  /* Jaune pièces */
+  --highlight-color: #c51e05; /* Survol rouge foncé */
 
   --card-bg: #ffffff;
-  --card-hover: #b3d0ff; /* Survol plus clair du bleu */
-
-  /* Boutons = rouge Mario */
+  --card-hover: #b3d0ff; 
   --btn-bg: #e32407;
   --btn-hover-bg: #c51e05;
 
-  /* Navbar & Footer = rouge Mario */
   --navbar-bg: #e32407;
   --footer-bg: #e32407;
 }
 
-/* ========== THEME LUIGI (vert dominant) ========== */
+/* ========== THEME LUIGI (vert) ========== */
 .luigi-theme {
-  /* Fond global : vert clair */
   --bg-color: #d4ffd0;
   --text-color: #2c2c2c;
   --secondary-text-color: #4c4c4c;
 
-  /* Couleur principale (titres) = vert plus foncé ou accent */
-  --primary-color: #20b020;  /* Vert vif Luigi */
-  /* highlight = un vert plus foncé pour survol */
+  --primary-color: #20b020;  
   --highlight-color: #178417;
 
   --card-bg: #ffffff;
-  --card-hover: #bcffb8; /* Survol => vert plus pâle */
-
-  /* Boutons = vert Luigi plus saturé */
+  --card-hover: #bcffb8;
   --btn-bg: #20b020;
   --btn-hover-bg: #178417;
 
-  /* Navbar & Footer = vert foncé */
   --navbar-bg: #1e9c1e;
   --footer-bg: #1e9c1e;
 }
@@ -97,7 +86,6 @@ html, body {
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.6s, color 0.6s;
-  /* On laissera la splash couvrir l'écran pour la transition */
 }
 
 img {
@@ -444,7 +432,7 @@ footer {
   color: #333;
 }
 
-/* ========== OVERRIDES THÈME-SPECIFIQUES ========== */
+/* ========== OVERRIDES THEME-SPECIFIQUES ========== */
 /* Lol theme hero */
 .lol-theme .hero {
   background: linear-gradient(
@@ -472,29 +460,29 @@ footer {
     url('img/hero-luigi.jpg') center/cover no-repeat;
 }
 
-/* ========== SPLASH ANIMATION ========== */
-
-/* On crée un élément .theme-splash en JS. 
-   On l'animera pour qu'il recouvre l'écran. */
-.theme-splash {
+/* ========== SPLASH OVERLAY FADE ========== */
+.theme-splash-overlay {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 0;
-  height: 0;
-  border-radius: 50%;
-  transform: translate(-50%, -50%) scale(0);
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 9999;
   pointer-events: none;
-  animation: splashExpand 0.5s forwards ease-out;
+
+  opacity: 0;
+  animation: fadeOverlay 0.8s forwards ease-out;
 }
 
-@keyframes splashExpand {
+@keyframes fadeOverlay {
   0% {
-    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
   }
   100% {
-    transform: translate(-50%, -50%) scale(20);
+    opacity: 0;
   }
 }
 
@@ -503,11 +491,9 @@ footer {
   .cv-container {
     grid-template-columns: 1fr;
   }
-  
+
   .about-content {
     flex-direction: column;
     text-align: center;
   }
 }
-
-
