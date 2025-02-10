@@ -1,1 +1,48 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfolio - Veille IA</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="data.js" defer></script> 
+  <script src="script.js" defer></script>
+</head>
+<body class="pro-theme">
+
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="logo">MonPortfolio</a>
+      <ul class="nav-links">
+        <li><a href="index.html">Accueil</a></li>
+        <li><a href="projects.html">Projets</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="veille.html" class="active">Veille</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="page-section">
+    <h2>Veille Informatique : L’IA et son impact</h2>
+    <p>Retrouvez ici des articles sélectionnés autour de l’Intelligence Artificielle, son évolution, ses enjeux et son impact sur le développement.</p>
+
+    <div class="filter-bar">
+      <input type="text" id="searchInput" placeholder="Rechercher par mots-clés..." />
+      <select id="sortSelect">
+        <option value="dateDesc">Date (récent)</option>
+        <option value="dateAsc">Date (ancien)</option>
+        <option value="titreAsc">Titre (A-Z)</option>
+      </select>
+      <button id="searchBtn" class="btn">Rechercher</button>
+    </div>
+
+    <div id="articlesContainer" class="articles-grid"></div>
+  </section>
+
+  <footer>
+    <p>© 2025 - Mon Nom. Tous droits réservés.</p>
+  </footer>
+
+</body>
+</html>
