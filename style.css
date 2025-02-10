@@ -1,12 +1,12 @@
-/* Couleurs principales inspirées par LoL */
+/* COULEURS PRINCIPALES */
 :root {
   --dark-bg: #0E1A26;       /* Bleu nuit / sombre */
   --gold-color: #C7B377;    /* Doré discret */
-  --accent-color: #00C0C8;  /* Bleu-vert */
+  --accent-color: #00C0C8;  /* Bleu-vert LoL */
   --text-color: #ffffff;    /* Texte clair */
-  --secondary-text: #cccccc; 
-  --btn-bg: #123447;        /* Fond bouton sombre */
-  --btn-hover-bg: #165772;  /* Survol bouton */
+  --secondary-text: #cccccc;
+  --btn-bg: #123447;
+  --btn-hover-bg: #165772;
 }
 
 /* RESET SIMPLE */
@@ -14,12 +14,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* BODY */
 body {
   background-color: var(--dark-bg);
   color: var(--text-color);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1.5;
 }
 
@@ -32,7 +33,7 @@ body {
   padding: 1rem 2rem;
 }
 
-.navbar .logo {
+.logo {
   color: var(--gold-color);
   font-size: 1.5rem;
   text-decoration: none;
@@ -53,33 +54,31 @@ body {
   color: var(--text-color);
   text-decoration: none;
   padding: 0.5rem 1rem;
-  transition: background 0.3s;
+  transition: background 0.3s, color 0.3s;
+  border-radius: 4px;
 }
 
 .nav-links a.active,
 .nav-links a:hover {
   background-color: var(--accent-color);
-  color: #000000;
-  border-radius: 4px;
+  color: #000;
 }
 
 /* HERO */
 .hero {
   min-height: 70vh;
   background: linear-gradient(
-    rgba(14, 26, 38, 0.7),
-    rgba(14, 26, 38, 0.7)
-  ), url('https://images.unsplash.com/photo-1600376070644-c06be0fae2f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+      rgba(14, 26, 38, 0.7),
+      rgba(14, 26, 38, 0.7)
+    ),
+    url('https://images.unsplash.com/photo-1600376070644-c06be0fae2f0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
   background-size: cover;
   background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-}
-
-.hero-text {
-  max-width: 600px;
+  padding: 2rem;
 }
 
 .hero h1 {
@@ -88,8 +87,8 @@ body {
 }
 
 .hero p {
-  margin-bottom: 1.5rem;
   color: var(--secondary-text);
+  margin-bottom: 1.5rem;
 }
 
 .btn {
@@ -108,11 +107,92 @@ body {
   background-color: var(--btn-hover-bg);
 }
 
-/* SECTION PAGE */
+/* SECTIONS GÉNÉRALES */
 .page-section {
   padding: 3rem 2rem;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.page-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+/* ABOUT SECTION */
+.about-section .about-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2rem;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+}
+
+/* FEATURED PROJECTS */
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.featured-card {
+  background-color: #10202f;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s;
+}
+
+.featured-card:hover {
+  transform: scale(1.02);
+}
+
+.featured-card img {
+  max-width: 100%;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.featured-card h3 {
+  color: var(--gold-color);
+  margin-bottom: 0.5rem;
+}
+
+.featured-card p {
+  color: var(--secondary-text);
+  margin-bottom: 1rem;
+}
+
+/* CALL TO ACTION */
+.call-to-action {
+  text-align: center;
+  background-color: #08131c;
+  padding: 2rem;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+.call-to-action h2 {
+  margin-bottom: 1rem;
+}
+
+.call-to-action p {
+  color: var(--secondary-text);
+  margin-bottom: 1.5rem;
 }
 
 /* PROJETS */
@@ -142,6 +222,12 @@ body {
 .project-card p {
   color: var(--secondary-text);
   margin-bottom: 1rem;
+}
+
+.project-card ul {
+  margin-bottom: 1rem;
+  list-style: none;
+  padding-left: 0;
 }
 
 /* CV */
@@ -178,6 +264,7 @@ body {
   flex-direction: column;
   max-width: 600px;
   margin-top: 2rem;
+  margin: 2rem auto 0;
 }
 
 .contact-form label {
@@ -195,6 +282,7 @@ body {
   outline: none;
   background-color: #1b2a3a;
   color: var(--text-color);
+  font-size: 1rem;
 }
 
 .contact-form button[type="submit"] {
@@ -209,4 +297,16 @@ footer {
   background-color: #08131c;
   color: var(--secondary-text);
   margin-top: 2rem;
+}
+
+/* RESPONSIVE EXEMPLE */
+@media (max-width: 768px) {
+  .cv-container {
+    grid-template-columns: 1fr;
+  }
+
+  .about-content {
+    flex-direction: column;
+    text-align: center;
+  }
 }
