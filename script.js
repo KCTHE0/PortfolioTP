@@ -19,7 +19,7 @@ const THEME_LOL = "lol";
 const THEME_MARIO = "mario";
 const THEME_LUIGI = "luigi";
 
-// Au chargement, on applique le thème stocké + initialisation
+// Au chargement, on applique le thème stocké
 document.addEventListener("DOMContentLoaded", () => {
   applyStoredTheme();
 });
@@ -42,7 +42,7 @@ document.addEventListener("keydown", (e) => {
     typedText += e.key;
   }
 
-  // on limite typedText pour éviter trop de caractères
+  // on limite typedText
   if (typedText.length > 50) {
     typedText = typedText.slice(-50);
   }
@@ -90,8 +90,7 @@ function triggerKonamiEgg() {
 // =========================
 function applyStoredTheme() {
   const stored = localStorage.getItem("theme");
-  if (stored === THEME_LOL)
-      if (stored === THEME_LOL) {
+  if (stored === THEME_LOL) {
     setThemeLoL(false);
   } else if (stored === THEME_MARIO) {
     setThemeMario(false);
@@ -102,53 +101,32 @@ function applyStoredTheme() {
   }
 }
 
-function setThemePro(withSplash = true) {
+function setThemePro() {
   document.body.classList.remove("lol-theme", "mario-theme", "luigi-theme");
   document.body.classList.add("pro-theme");
   localStorage.setItem("theme", THEME_PRO);
   updateLogo("img/logo-pro.png");
-  if (withSplash) playSplash("#007acc");
 }
 
-function setThemeLoL(withSplash = true) {
+function setThemeLoL() {
   document.body.classList.remove("pro-theme", "mario-theme", "luigi-theme");
   document.body.classList.add("lol-theme");
   localStorage.setItem("theme", THEME_LOL);
   updateLogo("img/logo-lol.png");
-  if (withSplash) playSplash("#0E1A26");
 }
 
-function setThemeMario(withSplash = true) {
+function setThemeMario() {
   document.body.classList.remove("pro-theme", "lol-theme", "luigi-theme");
   document.body.classList.add("mario-theme");
   localStorage.setItem("theme", THEME_MARIO);
   updateLogo("img/logo-mario.png");
-  if (withSplash) playSplash("#e32407");
 }
 
-function setThemeLuigi(withSplash = true) {
+function setThemeLuigi() {
   document.body.classList.remove("pro-theme", "lol-theme", "mario-theme");
   document.body.classList.add("luigi-theme");
   localStorage.setItem("theme", THEME_LUIGI);
   updateLogo("img/logo-luigi.png");
-  if (withSplash) playSplash("#1e9c1e");
-}
-
-// =========================
-// OVERLAY FADE ANIMATION
-// =========================
-function playSplash(color) {
-  // On crée un div overlay en plein écran
-  const overlay = document.createElement("div");
-  overlay.className = "theme-splash-overlay";
-  overlay.style.backgroundColor = color;
-
-  document.body.appendChild(overlay);
-
-  // Après l'animation, on supprime le div
-  overlay.addEventListener("animationend", () => {
-    overlay.remove();
-  });
 }
 
 // =========================
@@ -160,4 +138,3 @@ function updateLogo(src) {
     logoImg.src = src;
   }
 }
-
