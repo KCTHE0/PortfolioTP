@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f7f9fc;
+  background-color: #fcf7fa;
   color: #222;
   line-height: 1.6;
 }
@@ -44,7 +44,7 @@ body {
 
 .nav-links a:hover,
 .nav-links .active {
-  color: #007bff;
+  color: #ffb5ed;
 }
 
 /* HERO */
@@ -53,7 +53,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(to right, #e3f2fd, #ffffff);
+  background: linear-gradient(to right, #ffe3fd, #ffffff);
   text-align: center;
   padding: 2rem;
 }
