@@ -1,37 +1,41 @@
-const rssUrl = 'https://api.rss2json.com/v1/api.json?rss_url=https://www.jeuxvideo.com/rss/rss.xml';
+const feedContainer = document.getElementById('rss-feed');
+const searchInput = document.getElementById('searchInput');
 
-fetch(rssUrl)
-  .then(response => response.json())
+const RSS_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://www.jeuxvideo.com/rss/rss.xml';
+
+let allArticles = [];
+
+fetch(RSS_URL)
+  .then(res => res.json())
   .then(data => {
-    const feedContainer = document.getElementById('rss-feed');
-    const searchInput = document.getElementById('searchInput');
-
-    function displayArticles(articles) {
-      feedContainer.innerHTML = '';
-      articles.forEach(item => {
-        const article = document.createElement('div');
-        article.classList.add('article');
-        article.innerHTML = `
-          <h2><a href="${item.link}" target="_blank">${item.title}</a></h2>
-          <p>${item.pubDate}</p>
-          <p>${item.description}</p>
-        `;
-        feedContainer.appendChild(article);
-      });
-    }
-
-    let articles = data.items;
-    displayArticles(articles);
-
-    searchInput.addEventListener('input', () => {
-      const query = searchInput.value.toLowerCase();
-      const filtered = articles.filter(item =>
-        item.title.toLowerCase().includes(query) ||
-        item.description.toLowerCase().includes(query)
-      );
-      displayArticles(filtered);
-    });
-  })
-  .catch(error => {
-    console.error('Erreur lors du chargement du flux RSS:', error);
+    allArticles = data.items.filter(item =>
+      item.title.toLowerCase().includes('intelligence artificielle') ||
+      item.description.toLowerCase().includes('intelligence artificielle') ||
+      item.title.toLowerCase().includes('ia')
+    );
+    renderArticles(allArticles);
   });
+
+function renderArticles(articles) {
+  feedContainer.innerHTML = '';
+  articles.forEach(item => {
+    const article = document.createElement('div');
+    article.classList.add('article');
+    article.innerHTML = `
+      <h3><a href="${item.link}" target="_blank">${item.title}</a></h3>
+      <p>${new Date(item.pubDate).toLocaleDateString('fr-FR')}</p>
+      <p>${item.description.substring(0, 150)}...</p>
+    `;
+    feedContainer.appendChild(article);
+  });
+}
+
+// Recherche dynamique
+searchInput.addEventListener('input', () => {
+  const keyword = searchInput.value.toLowerCase();
+  const filtered = allArticles.filter(item =>
+    item.title.toLowerCase().includes(keyword) ||
+    item.description.toLowerCase().includes(keyword)
+  );
+  renderArticles(filtered);
+});
