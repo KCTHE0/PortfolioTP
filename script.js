@@ -1,18 +1,14 @@
 const feedContainer = document.getElementById('rss-feed');
 const searchInput = document.getElementById('searchInput');
 
-const RSS_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://www.gamesindustry.biz/rss';
+const RSS_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://venturebeat.com/category/ai/feed/';
 
 let allArticles = [];
 
 fetch(RSS_URL)
   .then(res => res.json())
   .then(data => {
-    allArticles = data.items.filter(item =>
-      item.title.toLowerCase().includes('intelligence artificielle') ||
-      item.description.toLowerCase().includes('intelligence artificielle') ||
-      item.title.toLowerCase().includes('ia')
-    );
+    allArticles = data.items;
     renderArticles(allArticles);
   });
 
