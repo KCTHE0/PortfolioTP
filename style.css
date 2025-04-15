@@ -122,7 +122,7 @@ body {
 
 /* PROJETS À LA UNE */
 .featured-grid {
-  display: flex;
+  text-align: center;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
