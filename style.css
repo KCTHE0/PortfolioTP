@@ -101,7 +101,8 @@ body {
 }
 
 .about-content {
-  display: flex;
+  display:flex;
+  text-align: center;
   flex-wrap: wrap;
   gap: 2rem;
   align-items: center;
