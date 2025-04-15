@@ -1,7 +1,7 @@
 const feedContainer = document.getElementById('rss-feed');
 const searchInput = document.getElementById('searchInput');
 
-const RSS_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://www.jeuxvideo.com/rss/rss.xml';
+const RSS_URL = ' https://www.wired.com/feed/category/artificial-intelligence/latest/rss';
 
 let allArticles = [];
 
