@@ -101,7 +101,7 @@ body {
 }
 
 .about-content {
- 
+  max-width: 600px;
   text-align: center;
   flex-wrap: wrap;
   gap: 2rem;
