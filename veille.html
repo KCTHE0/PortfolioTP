@@ -24,15 +24,9 @@
     <h2>Veille Informatique : L’IA et son impact</h2>
     <p>Retrouvez ici des articles sélectionnés autour de l’Intelligence Artificielle, son évolution, ses enjeux et son impact sur le développement.</p>
 
-    <div class="filter-bar">
-      <input type="text" id="searchInput" placeholder="Rechercher par mots-clés..." />
-      <select id="sortSelect">
-        <option value="dateDesc">Date (récent)</option>
-        <option value="dateAsc">Date (ancien)</option>
-        <option value="titreAsc">Titre (A-Z)</option>
-      </select>
-      <button id="searchBtn" class="btn">Rechercher</button>
-    </div>
+    <div id="rss-feed"></div>
+<script src=" https://www.wired.com/feed/category/artificial-intelligence/latest/rss"></script>
+
 
     <div id="articlesContainer" class="articles-grid"></div>
   </section>
