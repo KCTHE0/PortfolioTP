@@ -185,26 +185,41 @@ footer {
   color: #666;
   border-top: 1px solid #ddd;
 }
-#rss-feed .article {
-  border-bottom: 1px solid #eee;
-  padding: 1rem 0;
+#rss-feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
 }
 
-#rss-feed .article h3 {
+.article {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  transition: transform 0.2s ease;
+}
+
+.article:hover {
+  transform: translateY(-5px);
+}
+
+.article img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 180px;
+  margin-bottom: 1rem;
+}
+
+.article h3 {
   font-size: 1.1rem;
-  color: #333;
+  margin-bottom: 0.5rem;
+  color: #222;
 }
 
-#rss-feed .article h3 a {
-  text-decoration: none;
-  color: #0077cc;
-}
-
-#rss-feed .article h3 a:hover {
-  text-decoration: underline;
-}
-
-#rss-feed .article p {
-  margin: 0.3rem 0;
+.article p {
+  font-size: 0.9rem;
   color: #555;
 }
