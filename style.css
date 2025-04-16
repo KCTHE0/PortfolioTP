@@ -190,36 +190,42 @@ footer {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
   padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .article {
-  background-color: #fff;
+  background: #fff;
   border: 1px solid #ddd;
   border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
   transition: transform 0.2s ease;
 }
 
 .article:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
 }
 
 .article img {
   width: 100%;
-  border-radius: 8px;
+  height: 180px;
   object-fit: cover;
-  max-height: 180px;
-  margin-bottom: 1rem;
 }
 
 .article h3 {
-  font-size: 1.1rem;
-  margin-bottom: 0.5rem;
-  color: #222;
+  font-size: 1.2rem;
+  margin: 1rem;
+  color: #333;
+}
+
+.article h3 a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .article p {
-  font-size: 0.9rem;
+  margin: 0 1rem 1rem;
+  font-size: 0.95rem;
   color: #555;
 }
