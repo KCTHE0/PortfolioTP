@@ -1,16 +1,14 @@
 const feedContainer = document.getElementById('rss-feed');
 const searchInput = document.getElementById('searchInput');
 
-const RSS_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://www.gamekult.com/feed/news.xml';
+const RSS_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://www.gamekult.com/feed.xml';
 
 let allArticles = [];
 
 fetch(RSS_URL)
   .then(res => res.json())
   .then(data => {
-    allArticles = data.items.filter(item =>
-      item.title.toLowerCase().includes('ia')
-    );
+    allArticles = data.items;
     renderArticles(allArticles);
   });
 
