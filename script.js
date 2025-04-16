@@ -1,15 +1,12 @@
 const feedContainer = document.getElementById('rss-feed');
-const searchInput = document.getElementById('searchInput');
 
 const RSS_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://www.gamekult.com/feed.xml';
-
-let allArticles = [];
 
 fetch(RSS_URL)
   .then(res => res.json())
   .then(data => {
-    allArticles = data.items;
-    renderArticles(allArticles);
+    const articles = data.items.slice(0, 5); // Limite à 5 articles
+    renderArticles(articles);
   });
 
 function renderArticles(articles) {
@@ -27,12 +24,3 @@ function renderArticles(articles) {
     feedContainer.appendChild(article);
   });
 }
-
-searchInput.addEventListener('input', () => {
-  const keyword = searchInput.value.toLowerCase();
-  const filtered = allArticles.filter(item =>
-    item.title.toLowerCase().includes(keyword) ||
-    item.description.toLowerCase().includes(keyword)
-  );
-  renderArticles(filtered);
-});
