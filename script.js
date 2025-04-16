@@ -1,7 +1,7 @@
 const feedContainer = document.getElementById('rss-feed');
 const searchInput = document.getElementById('searchInput');
 
-const RSS_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://www.usine-digitale.fr/rss/ia/';
+const RSS_URL = 'https://api.rss2json.com/v1/api.json?rss_url=http://www.usine-digitale.fr/rss';
 const image = item.enclosure?.link || 'https://via.placeholder.com/600x300?text=Pas+de+visuel';
 
 
