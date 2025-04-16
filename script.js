@@ -8,14 +8,21 @@ let allArticles = [];
 fetch(RSS_URL)
   .then(res => res.json())
   .then(data => {
-    allArticles = data.items;
+    allArticles = data.items.filter(item =>
+      item.title.toLowerCase().includes('jeu vidéo') ||
+      item.description.toLowerCase().includes('jeu vidéo') ||
+      item.title.toLowerCase().includes('gaming') ||
+      item.description.toLowerCase().includes('gaming') ||
+      item.title.toLowerCase().includes('jeu') && item.description.toLowerCase().includes('intelligence artificielle')
+    );
+    
     renderArticles(allArticles);
   });
 
 function renderArticles(articles) {
   feedContainer.innerHTML = '';
   articles.forEach(item => {
-    const image = item.enclosure?.link || 'https://via.placeholder.com/600x300?text=Pas+de+visuel';
+    const image = item.enclosure?.link || 'https://cdn.pixabay.com/photo/2023/07/27/ai-artificial-intelligence-8149686_1280.jpg';
     
     const article = document.createElement('div');
     article.classList.add('article');
