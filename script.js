@@ -1,7 +1,8 @@
 const feedContainer = document.getElementById('rss-feed');
 const searchInput = document.getElementById('searchInput');
 
-const RSS_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://www.usine-digitale.fr/rss/ia/';
+const RSS_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://news.google.com/rss/search?q=intelligence+artificielle+jeu+vidéo&hl=fr&gl=FR&ceid=FR:fr';
+
 
 
 let allArticles = [];
