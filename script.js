@@ -1,6 +1,6 @@
 const feedContainer = document.getElementById('rss-feed');
 
-const RSS_URL = 'https://www.usine-digitale.fr/rss';
+const RSS_URL = 'https://api.rss2json.com/v1/api.json?rss_url=http://www.usine-digitale.fr/rss';
 
 fetch(RSS_URL)
   .then(res => res.json())
