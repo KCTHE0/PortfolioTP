@@ -5,7 +5,7 @@ const RSS_URL = 'https://api.rss2json.com/v1/api.json?rss_url=http://www.usine-d
 fetch(RSS_URL)
   .then(res => res.json())
   .then(data => {
-    const articles = data.items.slice(0, 5); // Limite à 5 articles
+    const articles = data.items.slice(0, 3); // Limite à 5 articles
     renderArticles(articles);
   });
 
