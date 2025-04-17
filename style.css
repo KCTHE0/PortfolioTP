@@ -84,7 +84,7 @@ body {
 }
 
 .btn:hover {
-  background-color: #b3009b;
+  background-color: #fd75eb;
 }
 
 /* SECTION GÉNÉRALES */
@@ -197,7 +197,7 @@ footer {
 
 .static-card {
   background-color: #fff;
-  border-left: 5px solid #7c3aed;
+  border-left: 5px solid #fd75eb;
   padding: 1.5rem 2rem;
   border-radius: 12px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
