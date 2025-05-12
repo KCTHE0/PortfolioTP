@@ -6,13 +6,13 @@ const RSS_URL = 'https://api.rss2json.com/v1/api.json?rss_url=https://www.actuia
 fetch(RSS_URL)
   .then(res => res.json())
   .then(data => {
-    // Filtrer les articles qui contiennent "IA" dans le titre ou la description
     const filteredArticles = data.items.filter(item => {
-      const title = item.title.toLowerCase();
-      const description = item.description.toLowerCase();
-      return title.includes('ia') || description.includes('ia');
+      const title = item.title;
+      const description = item.description;
+      const regex = /\bIA\b/i; // \b = délimiteur de mot, i = insensible à la casse
+      return regex.test(title) || regex.test(description);
     });
-
+    
     // Limiter à 3 articles après filtrage
     const articles = filteredArticles.slice(0, 3);
     renderArticles(articles, data.feed);
