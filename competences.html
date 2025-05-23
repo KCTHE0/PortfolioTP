@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mes Compétences – Théo Porteboeuf</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f4f8;
+      color: #333;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      margin-bottom: 40px;
+      color: #222;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .skill-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .skill-card h3 {
+      color: #007acc;
+      margin-bottom: 10px;
+    }
+
+    .skill-card p {
+      font-size: 0.95em;
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 60px;
+      text-align: center;
+      font-size: 0.9em;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mes Compétences</h1>
+
+  <section class="skills-grid">
+    <div class="skill-card">
+      <h3>Développement Front-end</h3>
+      <p>HTML, CSS, JavaScript, Responsive Design, React, UX/UI</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>Développement Back-end</h3>
+      <p>PHP, SQL, Node.js, gestion d’API REST, sécurité web</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>Algorithmes & Logique</h3>
+      <p>Structures de données, algorithmes classiques, tri, recherche, récursivité</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>Outils & Technologies</h3>
+      <p>Git, GitHub, VS Code, Trello, Figma, MySQL, Docker (bases)</p>
+    </div>
+
+    <div class="skill-card">
+      <h3>Langages appris</h3>
+      <p>HTML, CSS, JavaScript, PHP, SQL, Python, C#, Java (bases)</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Théo Porteboeuf – BTS SIO SLAM
+  </footer>
+
+</body>
+</html>
