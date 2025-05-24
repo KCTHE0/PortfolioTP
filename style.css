@@ -277,20 +277,6 @@ footer {
   text-align: center;
 }
 
-body {
-  font-family: 'Inter', sans-serif;
-  background-color: #f4f4f8;
-  color: #333;
-  padding: 40px 20px;
-}
-
-h1 {
-  text-align: center;
-  font-size: 2.5em;
-  margin-bottom: 40px;
-  color: #222;
-}
-
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
