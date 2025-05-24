@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mes Compétences – Théo Porteboeuf</title>
-  <link href="style.css" rel="stylesheet">
- 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Compétences – Théo Porteboeuf</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
- <header>
+  <header>
     <nav class="navbar">
       <ul class="nav-links">
         <li><a href="index.html">Accueil</a></li>
@@ -18,40 +17,56 @@
       </ul>
     </nav>
   </header>
+
 <body>
+  <main class="skills-wrapper">
+    <section class="skills-header">
+      <h1>Compétences Techniques</h1>
+      <p>Ces compétences ont été développées tout au long de ma formation en BTS SIO option SLAM.</p>
+    </section>
 
-  <h1>Mes Compétences</h1>
+    <section class="skill-category">
+      <h2>Front-end</h2>
+      <div class="skill-logos">
+        <img src="img/html.png" alt="HTML">
+        <img src="img/css.png" alt="CSS">
+        <img src="img/js.png" alt="JavaScript">
+      </div>
+      <p>HTML, CSS, JavaScript</p>
+    </section>
 
-  <section class="skills-grid">
-    <div class="skill-card">
-      <h3>Développement Front-end</h3>
-      <p>HTML, CSS, JavaScript, Responsive Design, React, UX/UI</p>
-    </div>
+    <section class="skill-category">
+      <h2>Back-end</h2>
+      <div class="skill-logos">
+        <img src="img/node.png" alt="NodeJS">
+        <img src="img/php.png" alt="PHP">
+        <img src="img/sql.png" alt="SQL">
+      </div>
+      <p>NodeJS, PHP, SQL</p>
+    </section>
 
-    <div class="skill-card">
-      <h3>Développement Back-end</h3>
-      <p>PHP, SQL, Node.js, gestion d’API REST, sécurité web</p>
-    </div>
+    <section class="skill-category">
+      <h2>Algorithmie</h2>
+      <div class="skill-logos">
+        <img src="img/python.png" alt="Python">
+        <img src="img/java.png" alt="Java">
+      </div>
+      <p>Python, Java</p>
+    </section>
 
-    <div class="skill-card">
-      <h3>Algorithmes & Logique</h3>
-      <p>Structures de données, algorithmes classiques, tri, recherche, récursivité</p>
-    </div>
-
-    <div class="skill-card">
-      <h3>Outils & Technologies</h3>
-      <p>Git, GitHub, VS Code, Trello, Figma, MySQL, Docker (bases)</p>
-    </div>
-
-    <div class="skill-card">
-      <h3>Langages appris</h3>
-      <p>HTML, CSS, JavaScript, PHP, SQL, Python, C#, Java (bases)</p>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 Théo Porteboeuf – BTS SIO SLAM
-  </footer>
-
+    <section class="skill-category">
+      <h2>Outils & Technologies</h2>
+      <div class="skill-logos">
+        <img src="img/git.png" alt="Git">
+        <img src="img/github.png" alt="GitHub">
+        <img src="img/mysql.png" alt="MySQL">
+        <img src="img/linux.png" alt="Linux">
+        <img src="img/virtualbox.png" alt="VirtualBox">
+        <img src="img/glpi.png" alt="GLPI">
+        <img src="img/ocs.png" alt="OCS Inventory">
+      </div>
+      <p>Git, GitHub, MySQL, Linux, VirtualBox, GLPI, OCS Inventory</p>
+    </section>
+  </main>
 </body>
 </html>
